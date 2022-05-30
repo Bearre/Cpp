@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 
-template<class T, typename /* По умолчанию */ Alloc = std::allocator<T>>
+template<class T, typename Alloc = std::allocator<T>>
 class Vector
 {
   private:
@@ -17,7 +17,7 @@ class Vector
 	//using traits = std::allocator_traits<Alloc>;
   public:
 
-    Vector() = default;
+    Vector();
 	/* 
 		Вектор одинаковых элементов размера size == capacity
 		Если не передавать свой аллокатор, будет создан по умолчанию
