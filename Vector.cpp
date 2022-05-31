@@ -203,26 +203,20 @@ class Vector
 	/*  */ 
     T& operator[](size_t index)
     { 
-	if(i<0 || size() <= i)
-	{
-		throw out_of_range{"Out of range in Vector::operator[]"};
-	}
+	if(index < 0 || index <= sz)  throw std::out_of_range{"Out of range in Vector::operator[]"};
 	return arr[index];
     }
 	
 	
     const T& operator[](size_t index) const
     {
-	if(i<0 || size() <= i)
-	{
-		throw out_of_range{"Out of range in Vector::operator[]"};
-	}
+	if(index < 0 || index >= sz) throw std::out_of_range{"Out of range in Vector::operator[]"};
 	return arr[index]; 
     }
 	
-	T& at(size_t index)
-	{
-		if(index >= sz) throw std::out_of_range("....");
-		return arr[index];
-	}
+    T& at(size_t index)
+    {
+    	if(index < 0 || index >= sz) throw std::out_of_range("Out of range in Vector::at(index)");
+ 	return arr[index];
+    }
 };
