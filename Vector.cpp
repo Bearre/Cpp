@@ -18,6 +18,7 @@ class Vector
   public:
 
     Vector();
+    // Vector(initializer_list<T>);
 	/* 
 		Вектор одинаковых элементов размера size == capacity
 		Если не передавать свой аллокатор, будет создан по умолчанию
