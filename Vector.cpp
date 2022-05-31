@@ -219,4 +219,19 @@ class Vector
     	if(index < 0 || index >= sz) throw std::out_of_range("Out of range in Vector::at(index)");
  	return arr[index];
     }
+	
+
+    // Iterators
+    T* begin(Vector<T, Alloc>& x)
+    {
+	    // pointer to first element
+	    return x.size() ? &x[0] : nullptr;
+    }
+	
+
+    T* end(Vector<T, Alloc>& x)
+    {
+	    // pointer to last element
+	    return x.size() ? &x[0] + x.size() : nullptr;
+    }
 };
