@@ -18,7 +18,12 @@ class Vector
   public:
 
     Vector();
-    // Vector(initializer_list<T>);
+    Vector(initializer_list<T>);
+	
+    template<typename Iter>
+    Vector(Iter begin, Iter end);
+	
+	
 	/* 
 		Вектор одинаковых элементов размера size == capacity
 		Если не передавать свой аллокатор, будет создан по умолчанию
