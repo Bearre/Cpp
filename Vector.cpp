@@ -21,7 +21,7 @@ class Vector
     Vector(initializer_list<T>);
 	
     template<typename Iter>
-    Vector(Iter begin, Iter end);
+    Vector(Iter begin, Iter end) -> Vector<typename Iter::value_type>;
 	
 	
 	/* 
