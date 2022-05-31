@@ -201,8 +201,24 @@ class Vector
     size_t capacity() const { return cap; }
     
 	/*  */ 
-    T& operator[](size_t index) { return arr[index]; }
-    const T& operator[](size_t index) const { return arr[index]; }
+    T& operator[](size_t index)
+    { 
+	if(i<0 || size() <= i)
+	{
+		throw out_of_range{"Out of range in Vector::operator[]"};
+	}
+	return arr[index];
+    }
+	
+	
+    const T& operator[](size_t index) const
+    {
+	if(i<0 || size() <= i)
+	{
+		throw out_of_range{"Out of range in Vector::operator[]"};
+	}
+	return arr[index]; 
+    }
 	
 	T& at(size_t index)
 	{
