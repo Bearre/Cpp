@@ -6,7 +6,7 @@ struct node
     int data{0};
     node* next{nullptr};
     node() = default;
-    node(int val) : data(val), next(nullptr) {}
+    explicit node(int val) : data(val), next(nullptr) {}
     node(int val, node* _next) : data(val), next(_next) {}
 };
 
